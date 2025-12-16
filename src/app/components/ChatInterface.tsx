@@ -363,12 +363,15 @@ export function ChatInterface() {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      if (mobile) {
-        setSidebarCollapsed(true);
-      }
     };
 
-    handleResize();
+    // Set initial state
+    const initialMobile = window.innerWidth < 768;
+    setIsMobile(initialMobile);
+    if (initialMobile) {
+      setSidebarCollapsed(true);
+    }
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
