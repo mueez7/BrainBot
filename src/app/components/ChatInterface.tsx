@@ -738,7 +738,7 @@ export function ChatInterface() {
 
         {/* Message Input */}
         {currentChat && (
-          <div className={`${isMobile ? 'mobile-input-container' : 'fixed left-[20px] sm:left-[50px] bottom-[24px] right-[20px] sm:right-[50px] max-w-[800px] mx-auto z-30'}`} data-name="Message box">
+          <div className={`${isMobile ? 'mobile-input-container' : 'absolute left-1/2 -translate-x-1/2 bottom-[24px] w-[calc(100%-100px)] max-w-[800px] z-30'}`} data-name="Message box">
             {/* Attached Files Preview */}
             {attachedFiles.length > 0 && (
               <div className="mb-2 p-3 rounded-[50px] backdrop-blur-[25px] backdrop-filter bg-gradient-to-r from-[rgba(56,55,73,0.56)] to-[rgba(19,15,25,0.56)] border border-white border-opacity-20">
