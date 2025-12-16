@@ -520,7 +520,7 @@ export function ChatInterface() {
         </div>
 
         {/* Profile */}
-        <div className={`absolute content-stretch flex items-center left-[20px] bottom-[20px] transition-all duration-300 ${sidebarCollapsed ? 'gap-0 flex-col' : 'gap-[10px]'
+        <div className={`absolute content-stretch flex items-center left-[20px] right-[20px] bottom-[20px] transition-all duration-300 ${sidebarCollapsed ? 'gap-0 flex-col' : 'gap-[10px]'
           }`}>
           <div className="relative rounded-[20px] shrink-0 size-[40px]" data-name="Profile Picture">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px]">
@@ -530,13 +530,13 @@ export function ChatInterface() {
           </div>
           {!sidebarCollapsed && (
             <>
-              <div className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[normal] flex-1">
+              <div className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[normal] flex-1 min-w-0">
                 <p className="text-white truncate">{userEmail.split('@')[0]}</p>
-                <p className="text-[rgba(255,255,255,0.7)]">Free Plan</p>
+                <p className="text-[rgba(255,255,255,0.7)] text-sm">Free Plan</p>
               </div>
               <button
                 onClick={handleLogout}
-                className="text-white hover:text-[#845EBD] transition-colors"
+                className="text-white hover:text-[#845EBD] transition-colors flex-shrink-0"
                 title="Logout"
               >
                 <LogOut className="size-4" />
