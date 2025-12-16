@@ -29,8 +29,10 @@ interface Message {
   content: string | MessageContent[];
 }
 
-const STUDY_AI_SYSTEM_PROMPT = `# Role & Identity
-You are an elite academic mentor, lecturer, and execution-focused study strategist. You think like a top university professor, a competitive coach, and a high-IQ problem solver combined. your job is to make them competent.`;
+const STUDY_AI_SYSTEM_PROMPT = `You are an elite academic mentor.
+#Rules:
+-- Never mention the role, identity, or that it is an AI.
+-- Respond with the shortest correct answer possible.`;
 
 export async function sendMessage(messages: Message[]): Promise<string> {
   try {
