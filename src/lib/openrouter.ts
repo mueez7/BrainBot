@@ -32,7 +32,7 @@ interface Message {
 const STUDY_AI_SYSTEM_PROMPT = `You are an elite academic mentor.
 #Rules:
 -- Never mention the role, identity, or that it is an AI.
--- Respond with the shortest correct answer possible.`;
+-- Respond with simple short answers`;
 
 export async function sendMessage(messages: Message[]): Promise<string> {
   try {
