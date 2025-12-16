@@ -565,7 +565,7 @@ export function ChatInterface() {
         ) : !hasMessages ? (
           <>
             {/* Welcome Message and 3D Model - Centered */}
-            <div className="absolute left-1/2 top-0 bottom-[120px] -translate-x-1/2 flex flex-col items-center justify-center w-full">
+            <div className={`absolute left-1/2 top-0 -translate-x-1/2 flex flex-col items-center justify-center w-full ${isMobile ? 'bottom-[140px]' : 'bottom-[120px]'}`}>
               {/* Live Spline 3D Model */}
               <div className="relative mb-8 w-[300px] h-[300px]" data-name="Live 3D model">
                 {splineLoading && (
@@ -590,7 +590,7 @@ export function ChatInterface() {
           </>
         ) : (
           /* Messages */
-          <div className="absolute left-[20px] sm:left-[50px] right-[20px] sm:right-[50px] top-[50px] bottom-[150px] overflow-y-auto">
+          <div className={`absolute left-[20px] sm:left-[50px] right-[20px] sm:right-[50px] top-[50px] overflow-y-auto ${isMobile ? 'bottom-[140px]' : 'bottom-[150px]'}`}>
             <div className="max-w-[800px] mx-auto space-y-4 pb-4">
               {messages.map((message) => (
                 <div
@@ -738,7 +738,7 @@ export function ChatInterface() {
 
         {/* Message Input */}
         {currentChat && (
-          <div className="absolute left-[20px] sm:left-[50px] bottom-[24px] right-[20px] sm:right-[50px] max-w-[800px] mx-auto" data-name="Message box">
+          <div className={`${isMobile ? 'mobile-input-container' : 'fixed left-[20px] sm:left-[50px] bottom-[24px] right-[20px] sm:right-[50px] max-w-[800px] mx-auto z-30'}`} data-name="Message box">
             {/* Attached Files Preview */}
             {attachedFiles.length > 0 && (
               <div className="mb-2 p-3 rounded-[50px] backdrop-blur-[25px] backdrop-filter bg-gradient-to-r from-[rgba(56,55,73,0.56)] to-[rgba(19,15,25,0.56)] border border-white border-opacity-20">
