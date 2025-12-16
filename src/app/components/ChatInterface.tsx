@@ -521,32 +521,32 @@ export function ChatInterface() {
 
         {/* Profile */}
         <div className={`absolute content-stretch flex items-center left-[20px] right-[20px] bottom-[20px] transition-all duration-300 ${sidebarCollapsed ? 'gap-0 flex-col' : 'gap-[10px]'
-          }`}>
+          }`} style={{ backgroundColor: 'rgba(255,0,0,0.1)' }}>
           <div className="relative rounded-[20px] shrink-0 size-[40px]" data-name="Profile Picture">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px]">
               <div className="absolute bg-[#d9d9d9] inset-0 rounded-[20px]" />
               <img alt="" className="absolute max-w-none object-50%-50% object-cover rounded-[20px] size-full" src={imgProfilePicture} />
             </div>
           </div>
-          {!sidebarCollapsed && (
+          {/* Always show profile content when sidebar is visible (not collapsed) */}
+          {(isMobile ? true : !sidebarCollapsed) ? (
             <>
               <div className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[normal] flex-1 min-w-0">
-                <p className="text-white truncate">{userEmail.split('@')[0]}</p>
-                <p className="text-[rgba(255,255,255,0.7)] text-sm">Free Plan</p>
+                <p className="text-white truncate text-sm">{userEmail.split('@')[0] || 'User'}</p>
+                <p className="text-[rgba(255,255,255,0.7)] text-xs">Free Plan</p>
               </div>
               <button
                 onClick={handleLogout}
-                className="text-white hover:text-[#845EBD] transition-colors flex-shrink-0"
+                className="text-white hover:text-[#845EBD] transition-colors flex-shrink-0 p-1"
                 title="Logout"
               >
                 <LogOut className="size-4" />
               </button>
             </>
-          )}
-          {sidebarCollapsed && (
+          ) : (
             <button
               onClick={handleLogout}
-              className="text-white hover:text-[#845EBD] transition-colors mt-2"
+              className="text-white hover:text-[#845EBD] transition-colors mt-2 p-1"
               title="Logout"
             >
               <LogOut className="size-4" />
