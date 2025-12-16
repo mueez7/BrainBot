@@ -1,0 +1,71 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+/* Syntax highlighting for code blocks */
+@import 'highlight.js/styles/github-dark.css';
+
+/* Custom code block styling to match the chat theme */
+.hljs {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Override some highlight.js colors to match our theme */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: #A592C4 !important;
+}
+
+.hljs-string,
+.hljs-attr {
+  color: #98D8C8 !important;
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #F7DC6F !important;
+}
+
+.hljs-comment {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #85C1E9 !important;
+}
+
+/* Custom Scrollbar Styling to match chatbot theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(56, 55, 73, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #A592C4 0%, #845EBD 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #B5A3D4 0%, #9570CD 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(56, 55, 73, 0.3);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #A592C4 rgba(56, 55, 73, 0.3);
+}
