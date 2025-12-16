@@ -414,8 +414,8 @@ export function ChatInterface() {
       )}
 
       {/* Sidebar */}
-      <div className={`fixed border-[0px_1px_0px_0px] border-[rgba(255,255,255,0.1)] border-solid h-screen overflow-hidden top-0 z-20 transition-all duration-300 ease-in-out ${isMobile ? (sidebarCollapsed ? '-left-[350px]' : 'left-0 w-[350px]') : `left-0 ${sidebarWidth}`
-        }`} data-name="Sidebar">
+      <div className={`fixed border-[0px_1px_0px_0px] border-[rgba(255,255,255,0.1)] border-solid ${isMobile ? 'h-[100dvh]' : 'h-screen'} overflow-hidden top-0 z-20 transition-all duration-300 ease-in-out ${isMobile ? (sidebarCollapsed ? '-left-[350px]' : 'left-0 w-[350px]') : `left-0 ${sidebarWidth}`
+        }`} data-name="Sidebar" style={{ paddingBottom: isMobile ? 'env(safe-area-inset-bottom, 20px)' : '0' }}>
         <div className="absolute backdrop-blur-[25px] backdrop-filter h-full left-[-2px] top-0 w-full" data-name="Background" style={{ backgroundImage: "linear-gradient(192.383deg, rgba(56, 55, 73, 0.37) 1.5697%, rgba(14, 11, 17, 0.37) 97.97%)" }} />
 
         {/* Hamburger Menu Button - Desktop Only, visible when sidebar is expanded */}
@@ -520,8 +520,8 @@ export function ChatInterface() {
         </div>
 
         {/* Profile */}
-        <div className={`absolute content-stretch flex items-center left-[20px] right-[20px] bottom-[20px] transition-all duration-300 ${sidebarCollapsed ? 'gap-0 flex-col' : 'gap-[10px]'
-          }`} style={{ backgroundColor: 'rgba(255,0,0,0.1)' }}>
+        <div className={`absolute content-stretch flex items-center left-[20px] right-[20px] min-h-[60px] transition-all duration-300 ${sidebarCollapsed ? 'gap-0 flex-col' : 'gap-[10px]'
+          }`} style={{ bottom: isMobile ? 'max(30px, env(safe-area-inset-bottom, 20px))' : '30px' }}>
           <div className="relative rounded-[20px] shrink-0 size-[40px]" data-name="Profile Picture">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px]">
               <div className="absolute bg-[#d9d9d9] inset-0 rounded-[20px]" />
